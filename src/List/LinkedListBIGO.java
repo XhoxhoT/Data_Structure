@@ -258,6 +258,26 @@ public class LinkedListBIGO {
     }
 
 
+    public boolean hasLoop(){
+
+        Node fast=head;
+        Node slow=head;
+        int iteration=0;
+        // pervecse duhet te sigurohemi edhe per fast !=null
+        // duhet te shofim edhe fast.next sepse teorikisht aty do jemi rradhen tjt
+
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+
+            if(fast==slow){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 
 
 
