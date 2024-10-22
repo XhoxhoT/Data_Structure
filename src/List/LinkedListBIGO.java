@@ -279,6 +279,52 @@ public class LinkedListBIGO {
     }
 
 
+// metode qe te gjejme noden e k-te nga fundi
+
+    public Node findKthFromEnd(int k){
+
+        Node fastest=head;
+        Node slowestNode=head;
+
+        if(k<0)
+            return null;
+
+        // pozicionoi fastest node, K node para slowestNode.
+        for(int i=0;i<k;i++){
+            // nese fastest eshte null i bjen qe ska k node
+            if(fastest == null){
+                return null;
+            }
+            // iterojme deri ne k here
+            fastest=fastest.next;
+        }
+
+        // perderisa jemi k here para slowest
+        // iterojme edhe fastest edhe slowest deri ne momentin qe fastest != null
+        // pra kemi arrit ne fund
+
+        while (fastest != null){
+
+            fastest=fastest.next;
+            slowestNode=slowestNode.next;
+        }
+        // kthejm slowestNode
+        return slowestNode;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
