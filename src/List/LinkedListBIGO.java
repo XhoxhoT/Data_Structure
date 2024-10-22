@@ -383,6 +383,38 @@ public class LinkedListBIGO {
 
     }
 
+    public int binaryToDecimal(){
+
+        int power;
+        int sum=0;
+
+        Node temp=head;
+
+        for(int i=0;i<length;i++){
+
+            sum= (int) (sum+ temp.value * Math.pow(2,length-i-1));
+            temp=temp.next;
+        }
+
+        return sum;
+    }
+
+    public int UdemyBinaryToDecimal(){
+
+        int num=0;
+
+        Node current= head;
+
+        while(current != null){
+
+            num = num*2 + current.value;
+            current=current.next;
+        }
+
+        return num;
+
+    }
+
 
 
 
