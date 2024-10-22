@@ -359,6 +359,30 @@ public class LinkedListBIGO {
 
     }
 
+    public void removeDuplicates(){
+
+        if(head==null)
+            return;
+
+        Node curr1=head;
+
+        while(curr1 != null){
+            Node curr2=curr1;
+
+            while(curr2.next != null){
+                if(curr2.next.value==curr1.value){
+                    curr2.next=curr2.next.next;
+                    length--;
+                }else{
+                    curr2=curr2.next;
+                }
+
+            }
+            curr1=curr1.next;
+        }
+
+    }
+
 
 
 
