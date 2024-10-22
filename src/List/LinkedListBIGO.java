@@ -314,6 +314,52 @@ public class LinkedListBIGO {
     }
 
 
+    // Ri orderojm nodet ne list ne baze te nje vlere x
+    public void partitionList(int x){
+
+      if(head == null){
+          return;
+      }
+
+      // ruajme lower and greater headers
+      Node dummy1=new Node(0);
+      Node dummy2 = new Node(0);
+
+      Node prev1= dummy1;
+      Node prev2=dummy2;
+
+      Node current = head;
+
+      while (current != null){
+
+          if(current.value < x){
+             // prev1.next -> current ne menyre qe iterimin e rradhes
+             // nese plotsohet condition, previous current .next shkon tek current
+              prev1.next=current;
+              // pra heren tjt do shkojm te current i rradhes
+              prev1 = current;
+          } else{
+
+              // prev1.next -> current ne menyre qe iterimin e rradhes
+              // nese plotsohet condition, previous current .next shkon tek current
+              prev2.next=current;
+              // pra heren tjt do shkojm te current i rradhes
+              prev2 = current;
+          }
+
+          current=current.next;
+
+      }
+
+      prev2.next=null;
+
+      prev1.next=dummy2.next;
+
+      head = dummy1.next;
+
+    }
+
+
 
 
 
