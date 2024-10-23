@@ -74,20 +74,13 @@ public class LinkedListBIGO {
         tail.next=null;
 
         length--;
-
+// ktu sigurohena qe nese length ka ik ne 0 pra kemi fshire vetem ate nyje qe kishim ateher i bjen qe tail dhe head duhet te vendosen ne null.
         if(length==0){
             head=null;
             tail=null;
         }
 
-
-
         return temp;
-
-
-
-
-
 
     }
 
@@ -104,11 +97,7 @@ public class LinkedListBIGO {
             newNode.next=head;
             head=newNode;
         }
-
         length++;
-
-
-
     }
 
 
@@ -127,10 +116,9 @@ public class LinkedListBIGO {
             return temp;
         }
 
-        temp= head.next;
-        head=temp;
+        temp= head;
+        head=head.next;
         // node qe heqim pointerin e bejm null qe garbage collector ta fshije nga memoria
-
         temp.next=null;
         length--;
         return temp;
