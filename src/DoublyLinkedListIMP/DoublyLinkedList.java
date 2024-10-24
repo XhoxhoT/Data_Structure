@@ -131,4 +131,32 @@ public class DoublyLinkedList {
         return temp;
     }
 
+    public Node get(int index){
+
+        if(index <0 || index>=length)
+            return null;
+
+        Node temp=head;
+        int i=0;
+        // e bajme ne menyren me eficente, pra dy rruge:
+        // ideks afer :
+                //      a. tail
+                //      b.head
+        // ne varesi te ketij info ne vazhdojme traversalin.
+        if(index<length/2){
+            while(i<index){
+                temp=temp.next;
+                i++;
+            }
+        }else{
+            temp=tail;
+            while(i<length-index-1){
+                temp=temp.prev;
+                i++;
+            }
+        }
+
+        return temp;
+    }
+
 }
