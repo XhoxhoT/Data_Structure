@@ -113,4 +113,22 @@ public class DoublyLinkedList {
 
     }
 
+    public Node removeFirst(){
+
+        if(head == null){
+            return null;
+        }
+        Node temp=head;
+        if(length==1){
+            head=null;
+            tail=null;
+            length--;
+            return temp;
+        }
+        head=head.next;
+        head.prev=null;
+        temp.next=null;
+        return temp;
+    }
+
 }

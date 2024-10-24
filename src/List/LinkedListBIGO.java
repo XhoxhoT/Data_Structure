@@ -141,7 +141,6 @@ public class LinkedListBIGO {
             temp=temp.next;
         }
         return temp;
-
     }
 
 
@@ -429,7 +428,6 @@ public class LinkedListBIGO {
         }
 
         head = dummy.next;
-
 
     }
 
