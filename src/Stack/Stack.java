@@ -40,6 +40,11 @@ public class Stack {
         System.out.println("Height : "+this.height);
     }
 
+    // Main logic of stack is Last in First out or First in Last Out
+    // Implementimi i stackut me linked list dhe duke perdorur metodat
+    // prepend dhe removeFirst kemi kompleksitet me te vogel.
+    // O(1), nese do perdornim append dhe Remove last ateher kompleksiteti do ishte
+    // O (n), sepse do iteronim tek secila prej nyjeve per te shku ne fund.
     public void push(int value){
 
         Node newNode=new Node(value);
