@@ -34,14 +34,33 @@ public class Heap {
     }
 
     public void insert(int value){
+
+        // si fillim e shtoj ne fund te arraylistes
         heap.add(value);
         int current = heap.size() - 1;
-
+        // marr indexin e fundit te listes qe perkon me elementin e fundit qe sapo shtova
+        // Ne maxHeap
+        // per aq kohe sa :
+        //  1. Current eshte pozitiv
+        //  2. vlera e arrayt ne kete index eshte me e madhe sesa vlera e parentit te tij
+        // bejme swap currentin me parentin e tij, gjithashtu updateojm currentin qe u ba sa parenti i tij.
         while(current > 0 && heap.get(current) > heap.get(parent(current))){
             swap(current,parent(current));
             current=parent(current);
         }
 
+    }
+    public static int findKthSmallest(int[] nums, int k) {
+        Heap maxHeap = new Heap();
+
+        for (int num : nums) {
+            maxHeap.insert(num);
+            if (maxHeap.getHeap().size() > k) {
+                maxHeap.remove();
+            }
+        }
+
+        return maxHeap.remove();
     }
 
     public Integer remove(){
@@ -64,6 +83,8 @@ public class Heap {
     private void sinkDown(int index){
 
         int maxIndex=index;
+
+        // gjithmone mbajme mend qe pema duhet te jete komplete pra fillon nga e majta ne te djathte
 
         while(true){
 
